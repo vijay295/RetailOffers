@@ -5,9 +5,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class Test {
 
-    public  void retail() {
-        int number = 120;
+    public void retail() {
+        int[] numbers = {41, 51, 101, 200, 300};
         int reward = 0;
+        for (int number : numbers) {
+            System.out.print("For " + number);
+            getCustomersRewardsPoint(number, reward);
+        }
+
+    }
+
+    private void getCustomersRewardsPoint(int number, int reward) {
         int number_to_eleminate = 0;
         while (number > 0) {
             if (number > 50 && number <= 100) {
@@ -22,7 +30,7 @@ public class Test {
                 number = 0;
             }
         }
-        System.out.println("Rewards Points "+reward);
+        System.out.println(" Rewards Points " + reward);
     }
 
     public static int getTotalRewards(int number) {
